@@ -1,6 +1,7 @@
 import allure
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
+from selenium.webdriver import ActionChains
 
 
 class BasePage:
@@ -43,3 +44,9 @@ class BasePage:
     @allure.step('Переход на открывшуюся вкладку')
     def swich_sites(self):
         self.driver.switch_to.window(self.driver.window_handles[-1])
+
+    @allure.step('перетягивание элемента')
+    def action_chain(self, source_locator, target_locator):
+        source_element = self.driver.find_element(*source_locator)
+        target_element = self.driver.find_element(*target_locator)
+        ActionChains(self.driver).drag_and_drop(source_element, target_element).perform()

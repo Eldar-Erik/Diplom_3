@@ -45,7 +45,7 @@ class AccountPage(BasePage):
         return self.wait_for_element(Locators.BUTTON_QUIT_PROFILE)
 
     def history_button_click(self):
-        self.click(Locators.BUTTON_ORDER_LIST)
+        self.click(Locators.BUTTON_ORDER_HISTORY)
 
     @allure.step('Ожидание загрузки списка заказов')
     def wait_for_history_list(self):
