@@ -34,10 +34,6 @@ class HomePage(BasePage):
     def click_order_list_button(self):
         self.click(Locators.BUTTON_ORDER_LIST)
 
-    @allure.step('Ожидание загрузки Листа заказов')
-    def wait_for_order_list(self):
-        return self.wait_for_element(Locators.LIST_ORDER_LIST)
-
     @allure.step('Проверка Оглавления')
     def get_order_list_toc(self):
         return self.is_element_visible(Locators.TAG_ORDER_LIST)

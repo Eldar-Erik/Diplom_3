@@ -41,10 +41,6 @@ class BasePage:
     def scroll_down(self, locator):
         self.driver.execute_script("arguments[0].scrollIntoView();", self.driver.find_element(*locator))
 
-    @allure.step('Переход на открывшуюся вкладку')
-    def swich_sites(self):
-        self.driver.switch_to.window(self.driver.window_handles[-1])
-
     @allure.step('перетягивание элемента')
     def action_chain(self, obj_locator, target_locator):
         obj_element = self.driver.find_element(*obj_locator)
