@@ -46,7 +46,7 @@ class BasePage:
         self.driver.switch_to.window(self.driver.window_handles[-1])
 
     @allure.step('перетягивание элемента')
-    def action_chain(self, source_locator, target_locator):
-        source_element = self.driver.find_element(*source_locator)
+    def action_chain(self, obj_locator, target_locator):
+        obj_element = self.driver.find_element(*obj_locator)
         target_element = self.driver.find_element(*target_locator)
-        ActionChains(self.driver).drag_and_drop(source_element, target_element).perform()
+        ActionChains(self.driver).drag_and_drop(obj_element, target_element).perform()
